@@ -1,5 +1,4 @@
 require_relative 'models/listing'
-#require 'action_view'
 
 class App < Sinatra::Base
 
