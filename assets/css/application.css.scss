@@ -1,0 +1,86 @@
+@import 'bootstrap';
+
+//colors
+$dark_gray: #333;
+$med_gray: #555;
+
+//fonts
+$helv: Helvetica;
+
+@import 'bootstrap';
+#visualization {
+	height: 500px;
+}
+body {
+	font-family: $helv;
+	font-size: 14px;
+}
+#link-form {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.alert {
+	display: none;
+	margin-bottom: -6px;
+	margin-top: 12px;
+}
+@-webkit-keyframes sk-rotatePlane {
+	0% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+	}
+	50% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+	}
+	100% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
+}
+@keyframes sk-rotatePlane {
+	0% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+	}
+	50% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+	}
+	100% {
+		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
+}
+#link {
+	&::-webkit-input-placeholder {
+		color: $med_gray;
+	}
+	&:-moz-placeholder {
+		color: $med_gray;
+	}
+	&::-moz-placeholder {
+		color: $med_gray;
+	}
+	&:-ms-input-placeholder {
+		color: $med_gray;
+	}
+}
+.sk-spinner-rotating-plane.sk-spinner {
+	width: 30px;
+	height: 30px;
+	background-color: $dark_gray;
+	position: absolute;
+	top: 50%;
+	left: 48%;
+	z-index: 10000;
+	display: none;
+	animation: sk-rotatePlane 1.2s infinite ease-in-out;
+	-webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+}

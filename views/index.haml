@@ -1,0 +1,21 @@
+%div.container-fluid
+  .page-header
+    %h1
+      seereddit
+      %small see what the conversation's all about
+  .alert.alert-danger.alert-dismissible{:role => "alert"}
+    %button.close{"data-dismiss" => "alert", :type => "button"}
+      %span{"aria-hidden" => "true"} &times;
+      %span.sr-only Close
+    %span.glyphicon.glyphicon-exclamation-sign{"aria-hidden" => "true"}
+    %span.sr-only Error:
+    Hmm..is that a valid reddit url?
+  %form#link-form{:action => '/link', :method => 'post'}
+    %label{:for => 'link'} Enter a post below and see what the conversation's all about!
+    %div.input-group
+      %input.input-large.form-control#link{:name => 'link', :placeholder => 'https://www.reddit.com/r/AskReddit/comments/2lrb1w/redditors_20_what_was_the_first_thing_you/'}
+      %span.input-group-btn
+        %button.btn.btn-primary Visualize!
+%div.container-fluid
+  %div#visualization
+  .sk-spinner.sk-spinner-rotating-plane
