@@ -1,5 +1,7 @@
 class Listing
-  class << self; attr_accessor :reddit, :num_of_comments end
+  class << self
+    attr_accessor :reddit, :num_of_comments
+  end
 
   @reddit = Snoo::Client.new
   begin
